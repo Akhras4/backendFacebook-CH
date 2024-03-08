@@ -7,8 +7,6 @@ feedblogs.find()
         .catch(error => res.status(404).send("some err"));
 })
 
-
-
 function CreatFeed(req, res) {
     const { name, message } = req.body;
     const feed = new feedblogs({
@@ -57,7 +55,6 @@ const EditFeedId = ((req, res) => {
        
     }
 })
-
 
 module.exports={
     MainPage,
