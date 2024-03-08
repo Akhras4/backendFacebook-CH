@@ -3,7 +3,7 @@ const DoThis=require("../controller/functions")
 const router=Router()
 
 
-router.get("/", DoThis.MainPage);
+router.get("/", DoThis.redi);
 router.get("/feed",DoThis.MainPage );
 router.post("/feed", DoThis.CreatFeed);
 

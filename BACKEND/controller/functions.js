@@ -1,6 +1,11 @@
 const { model, Error } = require('mongoose');
 const feedblogs = require("../models/DB")
 
+
+const redi =((req,res)=>{
+    res.redirect("/feed")
+})
+
 const MainPage = ((req, res) => {
 feedblogs.find()
         .then((result) => res.render("index", { feeds: result, A:true }))
@@ -57,6 +62,7 @@ const EditFeedId = ((req, res) => {
 })
 
 module.exports={
+    redi,
     MainPage,
     CreatFeed,
     GetFeedId,
