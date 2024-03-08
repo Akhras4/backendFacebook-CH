@@ -3,13 +3,12 @@
 <body>
     <div>
         <a href="/">back</a>
-    <h1><%= feed.name%></h1>
-     <p> <%= feed.message %></p>
+        <h1><%= feed.name%></h1>
+        <p> <%= feed.message %></p>
     </div>
     <form action="/feed/delete/<%= feed._id %>" method="post">
         <input type="submit" name="del" value="Delete">
     </form>
-    
     <a href="/feed/edit/<%= feed._id %>">edit</a>
 </body>
 </html>
