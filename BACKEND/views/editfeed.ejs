@@ -1,0 +1,14 @@
+<%- include("./parts/head")%>
+<%- include("./parts/nav")%>
+
+<form action="/feed/edit/<%= feed._id %>" method="post">
+  <div class="mb-3">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" required value="<%= feed.name %>">
+  </div>
+  <div class="mb-3">
+    <label for="message">message</label>
+    <input id="message" type="text" name="message" required value="<%= feed.message %>">
+  </div>
+  <input type="submit" name="submit" value="Submit">
+</form>

@@ -1,0 +1,33 @@
+<%- include("./parts/head") %>
+<%- include("./parts/nav") %>
+<body>
+  <form action="/feed" method="post">
+    <div class="mb-3">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="message">message</label>
+      <input id="message" type="text" name="message" required>
+    </div>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+  <% if (A == true) { %>
+    <% for (let i = feeds.length - 1; i >= 0; i--) { %>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title"><%= feeds[i].name %></h3>
+                <h6 class="card-title" style="float: right;"><%= feeds[i].date %></h6>
+                <p class="card-text"><%= feeds[i].message %></p>
+                <a href="/feed/<%= feeds[i]._id %>" style="float: right;">see more</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <% } %>
+  <% } %>
+</body>
+</html>
